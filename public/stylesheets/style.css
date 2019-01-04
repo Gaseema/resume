@@ -1,0 +1,66 @@
+body {
+    background: url(/images/bg.png);
+    overflow-x: hidden;
+}
+
+a, p, h1, h2, h3, h4, h5, h6, button {
+    font-family: 'Quicksand', sans-serif;
+}
+
+.containerHolder {
+    width: 90%;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/*****************************************
+            Profile Section
+*****************************************/
+.profileSection {}
+
+.profileInfo {
+    background: #C0E3E7;
+    text-align: center;
+}
+
+.profileInfo img {
+    width: 7em;
+    height: 7em;
+    background: red;
+    border-radius: 50%;
+}
+
+.profileInfo p {}
+
+.profileInfo ul {}
+
+.profileInfo ul li {
+    display: inline-block;
+    padding: 10px;
+}
+
+.cvLink {
+    background: white;
+    padding: 40px 0px;
+    text-align: center;
+}
+
+.cvLink button {
+    background: #C0E3E7;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+}
+
+/*****************************************
+            Infomation Section
+*****************************************/
+.infoSection {}
+
+/*****************************************
+            Navigation Section
+*****************************************/
+.navSection {}
