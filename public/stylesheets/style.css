@@ -1,6 +1,7 @@
 body {
     background: url(/images/bg.png);
     overflow-x: hidden;
+    background-attachment: fixed;
 }
 
 a, p, h1, h2, h3, h4, h5, h6, button {
@@ -39,10 +40,7 @@ a, p, h1, h2, h3, h4, h5, h6, button {
     margin-bottom: 0px;
 }
 
-.profileInfo ul {}
-
-.profileInfo ul li {
-    display: inline-block;
+.profileInfo a {
     padding: 10px;
 }
 
@@ -55,11 +53,11 @@ a, p, h1, h2, h3, h4, h5, h6, button {
 .cvLink button {
     background: #C0E3E7;
     border: none;
-    padding: 10px 20px;
+    padding: 10px 30px;
     border-radius: 50px;
     text-transform: uppercase;
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 500;
+    font-family: 'Quicksand', sans-serif !important;
+    font-weight: 600;
 }
 
 /*****************************************
@@ -70,14 +68,18 @@ a, p, h1, h2, h3, h4, h5, h6, button {
 .aboutMe {
     background: white;
     padding: 40px !important;
+    border: solid 1px #e6e6e6;
 }
-.aboutMe h3{
-    font-weight: bold;
+
+.aboutMe h3 {
+    font-weight: bolder;
+    padding-bottom: 30px;
+    font-size: 2em;
 }
 
 .aboutMe button {
     border: none;
-    padding: 10px 20px;
+    padding: 10px 35px;
     border-radius: 50px;
     text-transform: uppercase;
     font-family: 'Quicksand', sans-serif;
@@ -88,6 +90,251 @@ a, p, h1, h2, h3, h4, h5, h6, button {
     margin-top: 10px;
 }
 
+.personalInfoBlock {
+    font-weight: bold;
+    padding-right: 20px;
+    text-transform: uppercase;
+    font-size: 0.85em;
+}
+
+.languagesFluency {
+    padding: 0px;
+    /* margin: 0px; */
+}
+
+.fluency {
+    margin: 0;
+    position: relative;
+    top: -15px;
+    left: 10px;
+    font-size: 0.9em;
+    color: #757575;
+}
+
+.languagesFluency li {
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+    display: inline-block;
+    border-radius: 50%;
+}
+
+.languagesFluency .full {
+    background: #C0E3E7;
+}
+
+.languagesFluency .empty {
+    border: solid 1px grey;
+}
+
+.sideSmallPic {
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+}
+
+.sideBigPic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/************ Image Hover Start **********/
+@font-face {
+	font-weight: normal;
+	font-style: normal;
+	font-family: 'feathericons';
+	src:url('../fonts/feathericons/feathericons.eot?-8is7zf');
+	src:url('../fonts/feathericons/feathericons.eot?#iefix-8is7zf') format('embedded-opentype'),
+		url('../fonts/feathericons/feathericons.woff?-8is7zf') format('woff'),
+		url('../fonts/feathericons/feathericons.ttf?-8is7zf') format('truetype'),
+		url('../fonts/feathericons/feathericons.svg?-8is7zf#feathericons') format('svg');
+}
+
+.grid {
+	position: relative;
+	margin: 0 auto;
+	padding: 0px;
+	max-width: 1000px;
+	list-style: none;
+	text-align: center;
+	height: 50%;
+}
+
+/* Common style */
+.grid figure {
+	position: relative;
+	float: left;
+	overflow: hidden;
+	margin: 0px;
+	min-width: 320px;
+	max-width: 480px;
+	height: 100%;
+	width: 100%;
+	/* background: #3085a3; */
+	text-align: center;
+	cursor: pointer;
+}
+
+.grid figure img {
+	position: relative;
+	display: block;
+	min-height: 100%;
+	max-width: 100%;
+	opacity: 0.8;
+	object-fit: cover;
+}
+
+.grid figure figcaption {
+	padding: 2em;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 1.25em;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.grid figure figcaption::before,
+.grid figure figcaption::after {
+	pointer-events: none;
+}
+
+.grid figure figcaption,
+.grid figure figcaption > a {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* Anchor will cover the whole item by default */
+/* For some effects it will show as a button */
+.grid figure figcaption > a {
+	z-index: 1000;
+	text-indent: 200%;
+	white-space: nowrap;
+	font-size: 0;
+	opacity: 0;
+}
+
+.grid figure h2 {
+	word-spacing: -0.15em;
+	font-weight: 300;
+}
+
+.grid figure h2 span {
+	font-weight: 800;
+}
+
+.grid figure h2,
+.grid figure p {
+	margin: 0;
+}
+
+.grid figure p {
+	letter-spacing: 1px;
+	font-size: 68.5%;
+}
+
+/* Individual effects */
+
+/*---------------*/
+/***** Zoe *****/
+/*---------------*/
+
+figure.effect-zoe figcaption {
+	top: auto;
+	bottom: 0;
+	padding: 1em;
+	height: 3.75em;
+	background: #C0E3E7;
+	color: #3c4a50;
+	-webkit-transition: -webkit-transform 0.35s;
+	transition: transform 0.35s;
+	-webkit-transform: translate3d(0,100%,0);
+	transform: translate3d(0,100%,0);
+}
+
+figure.effect-zoe h2 {
+	float: left;
+}
+
+figure.effect-zoe p.icon-links a {
+	float: right;
+	color: #3c4a50;
+	font-size: 1.4em;
+}
+
+figure.effect-zoe:hover p.icon-links a:hover,
+figure.effect-zoe:hover p.icon-links a:focus {
+	color: #252d31;
+}
+
+figure.effect-zoe h2,
+figure.effect-zoe p.icon-links a {
+	-webkit-transition: -webkit-transform 0.35s;
+	transition: transform 0.35s;
+	-webkit-transform: translate3d(0,200%,0);
+	transform: translate3d(0,200%,0);
+}
+
+figure.effect-zoe p.icon-links a span::before {
+	display: inline-block;
+	padding: 8px 10px;
+	font-family: 'feathericons';
+	speak: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-eye::before {
+	content: '\e000';
+}
+
+.icon-paper-clip::before {
+	content: '\e001';
+}
+
+.icon-heart::before {
+	content: '\e024';
+}
+
+figure.effect-zoe h2 {
+	display: inline-block;
+	font-size: 1em;
+}
+
+
+figure.effect-zoe:hover figcaption,
+figure.effect-zoe:hover h2,
+figure.effect-zoe:hover p.icon-links a {
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+
+figure.effect-zoe:hover h2 {
+	-webkit-transition-delay: 0.05s;
+	transition-delay: 0.05s;
+}
+
+figure.effect-zoe:hover p.icon-links a:nth-child(3) {
+	-webkit-transition-delay: 0.1s;
+	transition-delay: 0.1s;
+}
+
+figure.effect-zoe:hover p.icon-links a:nth-child(2) {
+	-webkit-transition-delay: 0.15s;
+	transition-delay: 0.15s;
+}
+
+figure.effect-zoe:hover p.icon-links a:first-child {
+	-webkit-transition-delay: 0.2s;
+	transition-delay: 0.2s;
+}
+
+/************ Image Hover End **********/
+
 /*****************************************
             Navigation Section
 *****************************************/
@@ -97,5 +344,4 @@ a, p, h1, h2, h3, h4, h5, h6, button {
     text-align: center;
 }
 
-.navLinks a{
-}
+.navLinks a {}
