@@ -3,18 +3,35 @@ extends layout
 block content
     .row.containerHolder
         .col-sm-12.col-md-3.profileSection
-            .profileInfo.row
-                .col-sm
-                    img(src)
+            .row(style="margin: 10px 5px; -webkit-box-shadow: -3px 3px 34px -7px rgba(43,43,43,1);-moz-box-shadow: -3px 3px 34px -7px rgba(43,43,43,1);box-shadow: -3px 3px 34px -7px rgba(43,43,43,1)")
+                .profileInfo.col-sm-12
+                    img(src='/images/me.jpg')
                     p Gaseema Ndung'u
-                    P Software Developer
+                    P(style="font-weight: normal; padding: 0px; font-size: 1em;") Software Developer
                     ul
                         li O
                         li O
                         li O
                         li O
-            .cvLink.row
-                .col-sm
+                .cvLink.col-sm-12
                     button download cv
         .col-sm-12.col-md-8.infoSection
+            .row(style="margin: 10px 5px;")
+                .col-sm.aboutMe
+                    h3 HELLO, I'M GASEEMA!
+                    p I'm a polyglot developer with over 4 years of experience as a software engineer, and have worked at both small startups and large organizations. While I'm a proficient full-stack developer, I'm majorly focused on server side development, but equally inclined to client side development as well.
+                    button download share
+                    hr
         .col-sm-12.col-md-1.navSection
+            .row(style="margin: 10px 5px;")
+                .col.sm-12.navLinks
+                    div
+                        a 0
+                    div
+                        a 0
+                    div
+                        a 0
+                    div
+                        a 0
+                    div
+                        a 0

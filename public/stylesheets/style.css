@@ -4,7 +4,7 @@ body {
 }
 
 a, p, h1, h2, h3, h4, h5, h6, button {
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Quicksand', sans-serif !important;
 }
 
 .containerHolder {
@@ -21,16 +21,23 @@ a, p, h1, h2, h3, h4, h5, h6, button {
 .profileInfo {
     background: #C0E3E7;
     text-align: center;
+    padding: 40px;
 }
 
 .profileInfo img {
-    width: 7em;
-    height: 7em;
-    background: red;
+    width: 80%;
+    height: auto;
     border-radius: 50%;
+    object-fit: cover;
+    object-position: 63% 55%;
 }
 
-.profileInfo p {}
+.profileInfo p {
+    font-weight: 700;
+    font-size: 1.3em;
+    padding-top: 10px;
+    margin-bottom: 0px;
+}
 
 .profileInfo ul {}
 
@@ -60,7 +67,35 @@ a, p, h1, h2, h3, h4, h5, h6, button {
 *****************************************/
 .infoSection {}
 
+.aboutMe {
+    background: white;
+    padding: 40px !important;
+}
+.aboutMe h3{
+    font-weight: bold;
+}
+
+.aboutMe button {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    border: solid #C0E3E7 2px;
+    background: white;
+    margin-bottom: 65px;
+    margin-top: 10px;
+}
+
 /*****************************************
             Navigation Section
 *****************************************/
 .navSection {}
+
+.navLinks {
+    text-align: center;
+}
+
+.navLinks a{
+}
