@@ -3,7 +3,7 @@ extends layout
 block content
     .row.containerHolder
         .col-sm-12.col-md-3.profileSection(style='text-align: center;')
-            img(src='/images/logo.png' style='width: 80px;')
+            img.imageLogo(src='/images/logo.png')
             .row.sticky-top(style="margin: 10px 5px; -webkit-box-shadow: -3px 3px 34px -7px rgba(43,43,43,1);-moz-box-shadow: -3px 3px 34px -7px rgba(43,43,43,1);box-shadow: -3px 3px 34px -7px rgba(43,43,43,1); top: 20px;")
                 .profileInfo.col-sm-12
                     img(src='/images/me.jpg')
@@ -27,6 +27,7 @@ block content
                     button download cv
         .col-sm-12.col-md-8.infoSection
             .row(style="margin: 10px 5px;")
+                h5(style="font-weight: bold; color: #545252; margin-top: 52px; padding-left: 10px;") HOME
                 .col-sm-12.aboutMe#infoAboutMe
                     h3 HELLO, I'M GASEEMA!
                     p I'm a polyglot developer with over 4 years of experience as a software engineer, and have worked at both small startups and large organizations. While I'm a proficient full-stack developer, I'm majorly focused on server side development, but equally inclined to client side development as well.
@@ -424,7 +425,7 @@ block content
 
 
         .col-sm-12.col-md-1.navSection
-            .row.sticky-top(style="margin: 10px 5px; top: 20px;")
+            .row.sticky-top.navigationLinks(style="margin: 10px 5px; top: 20px;")
                 .col.sm-12.navLinks
                     div
                         a(href='#infoAboutMe')
