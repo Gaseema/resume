@@ -2,6 +2,9 @@ body {
     background: url(/images/bg.png);
     overflow-x: hidden;
     background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-color: #F3F3F3 !important;
+    background-size: contain;
 }
 
 a, p, h1, h2, h3, h4, h5, h6, button, li, div, span {
@@ -14,17 +17,111 @@ a, p, h1, h2, h3, h4, h5, h6, button, li, div, span {
     margin-right: auto !important;
 }
 
+@media only screen and (max-width: 768px) {
+    .imageLogoHolder {
+        background: white;
+        width: 100%;
+        position: relative;
+        height: 60px;
+    }
+
+    .containerHolder {
+        margin: 0px !important;
+        width: 100%;
+    }
+
+    .profileSection {
+        padding: 0px !important;
+    }
+
+    .imageLogo {
+        position: absolute;
+        left: 10px;
+        margin: 0px !important;
+        padding: 10px 0px;
+        width: 40px !important;
+    }
+
+    .profileInfo img {
+        width: 10em !important;
+    }
+
+    .profileInfoStart {
+        margin: 0px !important;
+        box-shadow: none !important;
+    }
+
+    .infoSection {
+        padding: 0px !important;
+        margin-top: 20px;
+    }
+
+    .infoSection .infoSecPad {
+        margin: 0px !important;
+    }
+
+    .aboutMe {
+        border: none !important;
+    }
+
+    .navSection {
+        display: none !important;
+    }
+
+    .mobileDivider {
+        display: block !important;
+    }
+
+    .homeLink {
+        display: none;
+    }
+
+    .aboutMe h3 {
+        font-size: 1.3em !important;
+    }
+
+    .grid figure img {
+        width: 100% !important;
+    }
+
+    .portfolioRight {
+        padding-right: 0px !important;
+        padding-left: 15px !important;
+    }
+}
+
+@media only screen and (max-width: 644px) {
+    .myDetails {
+        max-width: 100% !important;
+        width: 100% !important;
+        flex: 0 0 100%;
+    }
+}
+
+@media only screen and (max-width: 1218px) {
+    .arrowHead {
+        display: none !important;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .arrowHead {
+        display: block !important;
+    }
+}
+
 /*****************************************
             Profile Section
 *****************************************/
 .profileSection {}
-.imageLogo{
+
+.imageLogo {
     width: 60px;
     margin-top: 20px;
 }
 
 .profileInfo {
-    background: #C0E3E7;
+    background: #92d3da;
     text-align: center;
     padding: 40px;
 }
@@ -42,6 +139,7 @@ a, p, h1, h2, h3, h4, h5, h6, button, li, div, span {
     font-size: 1.3em;
     padding-top: 10px;
     margin-bottom: 0px;
+    color: white;
 }
 
 .profileInfo a {
@@ -55,7 +153,7 @@ a, p, h1, h2, h3, h4, h5, h6, button, li, div, span {
 }
 
 .cvLink button {
-    background: #C0E3E7;
+    background: #92d3da;
     border: none;
     padding: 10px 30px;
     border-radius: 50px;
@@ -89,7 +187,7 @@ a, p, h1, h2, h3, h4, h5, h6, button, li, div, span {
     text-transform: uppercase;
     font-family: 'Quicksand', sans-serif;
     font-weight: 500;
-    border: solid #C0E3E7 2px;
+    border: solid #92d3da 2px;
     background: white;
     margin-bottom: 65px;
     margin-top: 10px;
@@ -126,7 +224,7 @@ a, p, h1, h2, h3, h4, h5, h6, button, li, div, span {
 }
 
 .languagesFluency .full {
-    background: #C0E3E7;
+    background: #92d3da;
 }
 
 .languagesFluency .empty {
@@ -174,32 +272,31 @@ a, p, h1, h2, h3, h4, h5, h6, button, li, div, span {
 }
 
 .arrowBody {
-    background-color: #C0E3E7;
-    color: #010101;
-    display: inline-block;
-    padding-left: 10px;
-    /* width: 50%; */
+    width: 95px;
+    line-height: 35px;
+    position: relative;
+    background: #92D3DA;
+    text-align: center;
+    /* margin: 50px auto; */
+    color: white;
 }
 
-.arrowHead {
-    border-style: dashed;
-    border-color: transparent;
-    border-width: 0.20em;
-    display: -moz-inline-box;
-    display: inline-block;
-    /* Use font-size to control the size of the arrow. */
-    font-size: 100px;
-    height: 0;
-    line-height: 0;
-    position: relative;
-    vertical-align: middle;
-    width: 0;
-    background-color: #fff;
-    /* change background color acc to bg color */
-    border-left-width: 0.2em;
-    border-left-style: solid;
-    border-left-color: #C0E3E7;
-    left: 0.25em;
+.arrowBody:after, .arrowBody:before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 50%;
+    left: 100%;
+}
+
+.arrowBody:after {
+    bottom: 0;
+    background: linear-gradient(to right bottom, #92D3DA 50%, transparent 56%);
+}
+
+.arrowBody:before {
+    top: 0;
+    background: linear-gradient(to right top, #92D3DA 50%, transparent 55%);
 }
 
 /************ Image Hover Start **********/
@@ -230,8 +327,8 @@ a, p, h1, h2, h3, h4, h5, h6, button, li, div, span {
     float: left;
     overflow: hidden;
     margin: 0px;
-    min-width: 320px;
-    max-width: 480px;
+    /* min-width: 320px; */
+    /* max-width: 480px; */
     height: 100%;
     width: 100%;
     /* background: #3085a3; */
@@ -411,4 +508,77 @@ figure.effect-zoe:hover p.icon-links a:first-child {
 
 .navLinks div {
     padding-bottom: 30px;
+}
+
+/*****************************************
+            Snack Bar
+*****************************************/
+#snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+}
+
+#snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
 }
