@@ -1,10 +1,10 @@
 body {
-    background: url(/images/bg.png);
+    background: url(/images/bg2.png);
     overflow-x: hidden;
     background-attachment: fixed;
 }
 
-a, p, h1, h2, h3, h4, h5, h6, button {
+a, p, h1, h2, h3, h4, h5, h6, button, li, div, span {
     font-family: 'Quicksand', sans-serif !important;
 }
 
@@ -58,6 +58,7 @@ a, p, h1, h2, h3, h4, h5, h6, button {
     text-transform: uppercase;
     font-family: 'Quicksand', sans-serif !important;
     font-weight: 600;
+    border: none;
 }
 
 /*****************************************
@@ -139,209 +140,265 @@ a, p, h1, h2, h3, h4, h5, h6, button {
     height: 100%;
     object-fit: cover;
 }
+
+.detailsContainer {
+    padding-top: 12px;
+}
+
+.detailsContainer h6 {
+    font-weight: bold;
+    color: #676767;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    letter-spacing: 1px;
+}
+
+.detailsContainer ul {}
+
+.detailsContainer ul li {
+    color: #464646;
+}
+
+.detailsContainer h5 {
+    font-weight: bold;
+    color: #5b5b5b;
+    line-height: 0.1;
+}
+
+.detailsContainer .companyposition {
+    font-size: 0.9em;
+}
+
+.arrowBody {
+    background-color: #C0E3E7;
+    color: #010101;
+    display: inline-block;
+    padding-left: 10px;
+    /* width: 50%; */
+}
+
+.arrowHead {
+    border-style: dashed;
+    border-color: transparent;
+    border-width: 0.20em;
+    display: -moz-inline-box;
+    display: inline-block;
+    /* Use font-size to control the size of the arrow. */
+    font-size: 100px;
+    height: 0;
+    line-height: 0;
+    position: relative;
+    vertical-align: middle;
+    width: 0;
+    background-color: #fff;
+    /* change background color acc to bg color */
+    border-left-width: 0.2em;
+    border-left-style: solid;
+    border-left-color: #C0E3E7;
+    left: 0.25em;
+}
+
 /************ Image Hover Start **********/
 @font-face {
-	font-weight: normal;
-	font-style: normal;
-	font-family: 'feathericons';
-	src:url('../fonts/feathericons/feathericons.eot?-8is7zf');
-	src:url('../fonts/feathericons/feathericons.eot?#iefix-8is7zf') format('embedded-opentype'),
-		url('../fonts/feathericons/feathericons.woff?-8is7zf') format('woff'),
-		url('../fonts/feathericons/feathericons.ttf?-8is7zf') format('truetype'),
-		url('../fonts/feathericons/feathericons.svg?-8is7zf#feathericons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-family: 'feathericons';
+    src: url('../fonts/feathericons/feathericons.eot?-8is7zf');
+    src: url('../fonts/feathericons/feathericons.eot?#iefix-8is7zf') format('embedded-opentype'),
+        url('../fonts/feathericons/feathericons.woff?-8is7zf') format('woff'),
+        url('../fonts/feathericons/feathericons.ttf?-8is7zf') format('truetype'),
+        url('../fonts/feathericons/feathericons.svg?-8is7zf#feathericons') format('svg');
 }
 
 .grid {
-	position: relative;
-	margin: 0 auto;
-	padding: 0px;
-	max-width: 1000px;
-	list-style: none;
-	text-align: center;
-	height: 50%;
+    position: relative;
+    margin: 0 auto;
+    padding: 0px;
+    max-width: 1000px;
+    list-style: none;
+    text-align: center;
+    height: 50%;
 }
 
 /* Common style */
 .grid figure {
-	position: relative;
-	float: left;
-	overflow: hidden;
-	margin: 0px;
-	min-width: 320px;
-	max-width: 480px;
-	height: 100%;
-	width: 100%;
-	/* background: #3085a3; */
-	text-align: center;
-	cursor: pointer;
+    position: relative;
+    float: left;
+    overflow: hidden;
+    margin: 0px;
+    min-width: 320px;
+    max-width: 480px;
+    height: 100%;
+    width: 100%;
+    /* background: #3085a3; */
+    text-align: center;
+    cursor: pointer;
 }
 
 .grid figure img {
-	position: relative;
-	display: block;
-	min-height: 100%;
-	max-width: 100%;
-	opacity: 0.8;
-	object-fit: cover;
+    position: relative;
+    display: block;
+    min-height: 100%;
+    max-width: 100%;
+    opacity: 0.8;
+    object-fit: cover;
 }
 
 .grid figure figcaption {
-	padding: 2em;
-	color: #fff;
-	text-transform: uppercase;
-	font-size: 1.25em;
-	-webkit-backface-visibility: hidden;
-	backface-visibility: hidden;
+    padding: 2em;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.25em;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
 .grid figure figcaption::before,
 .grid figure figcaption::after {
-	pointer-events: none;
+    pointer-events: none;
 }
 
 .grid figure figcaption,
-.grid figure figcaption > a {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
+.grid figure figcaption>a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 /* Anchor will cover the whole item by default */
 /* For some effects it will show as a button */
-.grid figure figcaption > a {
-	z-index: 1000;
-	text-indent: 200%;
-	white-space: nowrap;
-	font-size: 0;
-	opacity: 0;
+.grid figure figcaption>a {
+    z-index: 1000;
+    text-indent: 200%;
+    white-space: nowrap;
+    font-size: 0;
+    opacity: 0;
 }
 
 .grid figure h2 {
-	word-spacing: -0.15em;
-	font-weight: 300;
+    word-spacing: -0.15em;
+    font-weight: 300;
 }
 
 .grid figure h2 span {
-	font-weight: 800;
+    font-weight: 800;
+    /* padding-top: 2px; */
 }
 
 .grid figure h2,
 .grid figure p {
-	margin: 0;
+    margin: 0;
 }
 
 .grid figure p {
-	letter-spacing: 1px;
-	font-size: 68.5%;
+    letter-spacing: 1px;
+    font-size: 68.5%;
 }
 
 /* Individual effects */
-
 /*---------------*/
 /***** Zoe *****/
 /*---------------*/
-
 figure.effect-zoe figcaption {
-	top: auto;
-	bottom: 0;
-	padding: 1em;
-	height: 3.75em;
-	background: #C0E3E7;
-	color: #3c4a50;
-	-webkit-transition: -webkit-transform 0.35s;
-	transition: transform 0.35s;
-	-webkit-transform: translate3d(0,100%,0);
-	transform: translate3d(0,100%,0);
+    top: auto;
+    bottom: 0;
+    padding: 1em;
+    height: 3.75em;
+    background: #388a94b0;
+    color: white;
+    -webkit-transition: -webkit-transform 0.35s;
+    transition: transform 0.35s;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
 }
 
 figure.effect-zoe h2 {
-	float: left;
+    float: left;
 }
 
 figure.effect-zoe p.icon-links a {
-	float: right;
-	color: #3c4a50;
-	font-size: 1.4em;
+    float: right;
+    color: #3c4a50;
+    font-size: 1.4em;
 }
 
 figure.effect-zoe:hover p.icon-links a:hover,
 figure.effect-zoe:hover p.icon-links a:focus {
-	color: #252d31;
+    color: #252d31;
 }
 
 figure.effect-zoe h2,
 figure.effect-zoe p.icon-links a {
-	-webkit-transition: -webkit-transform 0.35s;
-	transition: transform 0.35s;
-	-webkit-transform: translate3d(0,200%,0);
-	transform: translate3d(0,200%,0);
+    -webkit-transition: -webkit-transform 0.35s;
+    transition: transform 0.35s;
+    -webkit-transform: translate3d(0, 200%, 0);
+    transform: translate3d(0, 200%, 0);
 }
 
 figure.effect-zoe p.icon-links a span::before {
-	display: inline-block;
-	padding: 8px 10px;
-	font-family: 'feathericons';
-	speak: none;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+    display: inline-block;
+    padding: 8px 10px;
+    font-family: 'feathericons';
+    speak: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .icon-eye::before {
-	content: '\e000';
+    content: '\e000';
 }
 
 .icon-paper-clip::before {
-	content: '\e001';
+    content: '\e001';
 }
 
 .icon-heart::before {
-	content: '\e024';
+    content: '\e024';
 }
 
 figure.effect-zoe h2 {
-	display: inline-block;
-	font-size: 1em;
+    display: inline-block;
+    font-size: 1em;
 }
-
 
 figure.effect-zoe:hover figcaption,
 figure.effect-zoe:hover h2,
 figure.effect-zoe:hover p.icon-links a {
-	-webkit-transform: translate3d(0,0,0);
-	transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
 }
 
 figure.effect-zoe:hover h2 {
-	-webkit-transition-delay: 0.05s;
-	transition-delay: 0.05s;
+    -webkit-transition-delay: 0.05s;
+    transition-delay: 0.05s;
 }
 
 figure.effect-zoe:hover p.icon-links a:nth-child(3) {
-	-webkit-transition-delay: 0.1s;
-	transition-delay: 0.1s;
+    -webkit-transition-delay: 0.1s;
+    transition-delay: 0.1s;
 }
 
 figure.effect-zoe:hover p.icon-links a:nth-child(2) {
-	-webkit-transition-delay: 0.15s;
-	transition-delay: 0.15s;
+    -webkit-transition-delay: 0.15s;
+    transition-delay: 0.15s;
 }
 
 figure.effect-zoe:hover p.icon-links a:first-child {
-	-webkit-transition-delay: 0.2s;
-	transition-delay: 0.2s;
+    -webkit-transition-delay: 0.2s;
+    transition-delay: 0.2s;
 }
 
 /************ Image Hover End **********/
-
 /*****************************************
             Navigation Section
 *****************************************/
 .navSection {}
 
 .navLinks {
+    padding: 0px !important;
     text-align: center;
 }
 
-.navLinks a {}
+.navLinks div {padding-bottom: 30px;}
