@@ -29,12 +29,12 @@ app.use('/users', usersRouter);
 // Node nodemailer
 // Generate test SMTP service account from ethereal.email
 // Only needed if you don't have a real mail account for testing
-app.get('/mail', (req, res, next) => {
+app.post('/mail', (req, res, next) => {
     console.log('running mail');
     nodemailer.createTestAccount((err, account) => {
         // create reusable transporter object using the default SMTP transport
         let transporter = nodemailer.createTransport({
-            service:'Gmail',
+            service: 'Gmail',
             auth: {
                 user: 'gaseema.n@gmail.com',
                 pass: gMail.password
@@ -42,25 +42,23 @@ app.get('/mail', (req, res, next) => {
         });
 
         // setup email data with unicode symbols
+        var mail = req.body
         let mailOptions = {
-            from: '"Fred Foo 👻" <gaseema@bitsoko.io>', // sender address
+            from: '' + mail.name + ' "👻" <' + mail.email + '>', // sender address
             to: 'gaseema.n@gmail.com', // list of receivers
-            subject: 'Hello ✔', // Subject line
+            subject: 'Resume Mail ✔', // Subject line
             text: 'Hello world?', // plain text body
-            html: '<b>Hello world?</b>' // html body
+            html: '<div style="background: #92D3DA;border-radius:5px;color:white;width: 80%;display: block;margin-left: auto;margin-right: auto;padding: 20px;"><h4 style=" text-align: center; font-size: 2.5em; margin: 0px; padding-bottom: 25px;">New Email from ' + mail.name + '</h4><p style=" font-size: 1.5em; margin: 0px; padding-left: 5%;"><span style=" font-weight: bold;">Name:</span> ' + mail.name + ' </p><p style=" font-size: 1.5em; margin: 0px; padding-left: 5%;"><span style=" font-weight: bold;">Email:</span> ' + mail.email + '</p><p style=" font-size: 1.5em; margin: 0px; padding-left: 5%;"><span style=" font-weight: bold;">Subject:</span> ' + mail.subject + ' </p><p style=" font-size: 1.5em; margin: 0px; padding-left: 5%;"><span style=" font-weight: bold;">Message:</span> ' + mail.message + '</p></div>' // html body
         };
-
         // send mail with defined transport object
         transporter.sendMail(mailOptions, (error, info) => {
             if (error) {
+                res.send("not working");
                 return console.log(error);
             }
-            console.log('Message sent: %s', info.messageId);
-            // Preview only available when sending through an Ethereal account
-            console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
-
-            // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
-            // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
+            //Message sent successfully function here
+            console.log('Mail sent');
+            res.send("working");
         });
     });
 });
