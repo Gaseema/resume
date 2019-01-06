@@ -57,6 +57,9 @@ $(document).on('click touchstart', '.sendMail', function(e) {
     } else if (message == '') {
         snackbar('Ooops! Please enter message');
         $('.sendMail').html('send');
+    } else if (email.indexOf('@') == -1) {
+        snackbar('Ooops! Please enter a valid email.');
+        $('.sendMail').html('send');
     } else {
         var obj = {
             name: name,
